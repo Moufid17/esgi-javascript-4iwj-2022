@@ -133,3 +133,60 @@ const indexedUsers = {
     }
   ]
 };
+
+// Answer
+    
+const users = [
+  {
+    id: 1,
+    username: "aminnairi",
+    language: "JavaScript"
+  },
+  {
+    id: 2,
+    username: "quentinhermiteau",
+    language: "PHP"
+  },
+  {
+    id: 3,
+    username: "lucaslavander",
+    language: "JavaScript"
+  }
+];
+
+// Version Personnelle
+users.find(user => [user['language']])
+// Get all languages types
+let langType = [], nb = 0;
+for(const index in users){
+    if(!langType.includes(users[index]['language'])){
+        langType[nb] = users[index]['language'];
+        nb++;
+    }
+}
+
+// 
+let indexedUsers = {};
+indexedUsers[langType[0]] = [];
+indexedUsers[langType[1]] = [];
+
+for(const index in users){
+
+    if(users[index]['language'] == langType[0]){
+        indexedUsers[langType[0]].push( users[index]);
+    }else if(users[index]['language'] == langType[1]){
+        indexedUsers[langType[1]].push(users[index]);
+    }
+}
+console.log(indexedUsers);
+
+// Correction
+let indexUsers = {};
+for( const user in users){
+    const l = user.language;
+    if(!(l in indexUsers)){
+        indexUsers[l] = (user)
+    }
+    indexUsers[l] = [];
+}
+console.log(indexedUsers);
