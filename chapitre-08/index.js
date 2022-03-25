@@ -85,6 +85,7 @@ const computer = {
 
 console.log(computer.brand);
 
+// Modification de la valeur de la propriété "brand"
 computer.brand = "mac os x";
 
 console.log(computer.brand);
